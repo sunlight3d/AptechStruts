@@ -4,13 +4,18 @@
  * and open the template in the editor.
  */
 package model;
+
+/**
+ *
+ * @author hoangnd
+ */
 public class Message {
-    private String message = "Hello world";
+    private String message;
+    
+    public Message() {
+        message = "Hello Struts User";
+    }
     public String getMessage() {
         return message;
-    }
-    public void setMessage(String message) {
-        this.message = message;
-    }
-    
+    }    
 }

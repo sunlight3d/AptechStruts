@@ -3,17 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package action;
+
 import com.opensymphony.xwork2.ActionSupport;
 import model.Message;
 
-public class HelloWorld extends ActionSupport {
+public class HelloWorldAction extends ActionSupport {
     private Message message;
-    @Override
+
     public String execute() {
-        this.message = new Message();
+        message = new Message() ;
+        System.out.println("chodd");
         return SUCCESS;
     }
-    
-    
+
+    public Message getMessageStore() {
+        return message;
+    }
 }
