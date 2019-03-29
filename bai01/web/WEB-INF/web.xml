@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    display-name>Struts2 Demo App</display-name>
+14
+    <filter>
+15
+        <filter-name>struts2</filter-name>
+16
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+17
+    </filter>
+    <filter-mapping>
+20
+        <filter-name>struts2</filter-name>
+21
+        <url-pattern>/*</url-pattern>
+22
+    </filter-mapping>
+
+</web-app>
