@@ -6,6 +6,10 @@
   
     <!-- Configuration for the default package. -->
     <package name="bai01" extends="struts-default">
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+        
         <action name="hello" class="action.HelloWorldAction" method="execute">
             <result name="success">/HelloWorld.jsp</result>
         </action>
