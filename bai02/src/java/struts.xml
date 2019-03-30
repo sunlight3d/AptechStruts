@@ -2,16 +2,13 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
-<struts>
-  
-    <!-- Configuration for the default package. -->
-    <package name="bai01" extends="struts-default">
+<struts>  
+    <package name="bai02" extends="struts-default">
         <action name="index">
             <result>/index.jsp</result>
         </action>
-        
-        <action name="hello" class="action.HelloWorldAction" method="execute">
-            <result name="success">/HelloWorld.jsp</result>
+        <action name="register" class="action.Register" method="execute">
+            <result name="success">/thankyou.jsp</result>
         </action>
     </package>
 </struts>
