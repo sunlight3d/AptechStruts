@@ -12,8 +12,7 @@ public class HelloWorldAction extends ActionSupport {
     private Message message;
     
     public String execute() {
-        message = new Message() ;
-        System.out.println("chodd");
+        message = new Message() ;        
         return SUCCESS;
     }
 
