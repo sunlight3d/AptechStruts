@@ -8,6 +8,7 @@
         <action name="index">
             <result>/index.jsp</result>
         </action>
+
         <action name="edit" class="action.EditAction" method="input">
             <result name="input">/edit.jsp</result>
         </action>
@@ -15,6 +16,5 @@
         <action name="save" class="action.EditAction" method="execute">
             <result name="success">/thankyou.jsp</result>
         </action>
-        
     </package>
 </struts>

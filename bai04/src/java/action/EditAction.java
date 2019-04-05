@@ -20,7 +20,6 @@ import service.EditServiceInMemory;
   @Result(name="input", location="/edit.jsp"), 
 })
 
-
 public class EditAction extends ActionSupport {    
     private Person personBean;
     private String[] sports = {"Football", "Voleyball", "Basketball"};
@@ -29,8 +28,8 @@ public class EditAction extends ActionSupport {
     private EditServiceInMemory editServiceInMemory = new EditServiceInMemory();
     
     @Override
-    public String execute() throws Exception {       
-        editServiceInMemory.savePerson(getPersonBean());
+    public String execute() throws Exception {   
+        editServiceInMemory.savePerson(editServiceInMemory.getPerson());
         return SUCCESS;
     }
     @Override
