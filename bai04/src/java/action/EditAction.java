@@ -16,7 +16,8 @@ import java.util.List;
 import service.EditServiceInMemory;
 
 @Results({
-  @Result(name="edit", location="/edit.jsp"), 
+  @Result(name="success", location="/edit.jsp"), 
+  @Result(name="input", location="/edit.jsp"), 
 })
 
 
@@ -25,20 +26,20 @@ public class EditAction extends ActionSupport {
     private String[] sports = {"Football", "Voleyball", "Basketball"};
     private String[] carModels = {"Mazda", "Ford", "Nissan" ,"Honda", "Toyota"};
     private String[] genders = {"Male", "Female", "Not sure"};
-    private EditServiceInMemory editServiceInMemory;
+    private EditServiceInMemory editServiceInMemory = new EditServiceInMemory();
     
     @Override
     public String execute() throws Exception {       
-        
-        return ERROR;
+        editServiceInMemory.savePerson(getPersonBean());
+        return SUCCESS;
     }
     @Override
     public String input() throws Exception {       
-        
-        return ERROR;
+        setPersonBean(editServiceInMemory.getPerson());
+        return INPUT;
     }    
     
-    public Person getPersonBean() {
+    public Person getPersonBean() {       
         return personBean;
     }
     public void setPersonBean(Person personBean) {
