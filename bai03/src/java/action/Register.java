@@ -30,6 +30,7 @@ public class Register extends ActionSupport {
     public void setPersonBean(Person personBean) {
         this.personBean = personBean;
     }
+    @Override
     public void validate() {
         if(personBean.getFirstName().length() == 0) {
             addFieldError("personBean.firstName", "Firstname is required");

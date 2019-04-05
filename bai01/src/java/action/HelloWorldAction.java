@@ -10,7 +10,7 @@ import model.Message;
 
 public class HelloWorldAction extends ActionSupport {
     private Message message;
-    
+    @Override
     public String execute() {
         message = new Message() ;        
         return SUCCESS;

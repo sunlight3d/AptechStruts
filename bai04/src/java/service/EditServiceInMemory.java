@@ -20,12 +20,11 @@ public class EditServiceInMemory {
         return EditServiceInMemory.person;
     }
     public void savePerson(Person personBean) {
-        Person selectedPerson = EditServiceInMemory.person;
-        selectedPerson.setFirstName(selectedPerson.getFirstName());
-        selectedPerson.setSport(selectedPerson.getSport());
-        selectedPerson.setGender(selectedPerson.getGender());
-        selectedPerson.setResidency(selectedPerson.getResidency());
-        selectedPerson.setOver18(selectedPerson.isOver18());
-        selectedPerson.setCarModels(selectedPerson.getCarModels());        
+        EditServiceInMemory.person.setFirstName(personBean.getFirstName());
+        EditServiceInMemory.person.setSport(personBean.getSport());
+        EditServiceInMemory.person.setGender(personBean.getGender());
+        EditServiceInMemory.person.setResidency(personBean.getResidency());
+        EditServiceInMemory.person.setOver18(personBean.isOver18());
+        EditServiceInMemory.person.setCarModels(personBean.getCarModels());        
     }
 }
