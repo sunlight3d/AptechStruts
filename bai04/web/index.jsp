@@ -1,13 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix='s' uri='/struts-tags'%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+https://www.javatpoint.com/struts-2-registration-form-example
+CREATE TABLE tblUsers(
+name VARCHAR(2000),
+password VARCHAR(2000),
+email VARCHAR(2000),
+gender VARCHAR(2000),
+);
+-->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Struts 2 form tags</title>
+        <title>Registration Form Example</title>
     </head>
-    <body>        
-        <h1><a href='<s:url action="edit" />' >Edit your information</a></h1>
+    <body>
+        <h1>Hello Struts 2</h1>
+        
     </body>
 </html>
