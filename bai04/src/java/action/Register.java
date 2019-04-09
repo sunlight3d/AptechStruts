@@ -7,7 +7,7 @@ package action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import static com.opensymphony.xwork2.Action.SUCCESS;
-import controller.RegisterDAO;
+import controller.Database;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 
@@ -24,7 +24,7 @@ public class Register extends ActionSupport {
     private User userBean;
     @Override
     public String execute() throws Exception {       
-        int result = RegisterDAO.insertUser(userBean);        
+        int result = Database.getInstance().insertUser(userBean);        
         return SUCCESS;
     }    
     public User getPersonBean() {

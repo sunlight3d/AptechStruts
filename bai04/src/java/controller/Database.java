@@ -1,7 +1,16 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+CREATE DATABASE strutsExample;
+USE strutsExample;
+CREATE TABLE IF NOT EXISTS tblUsers (
+firstName VARCHAR(500),
+lastName VARCHAR(500),
+email VARCHAR(500),
+age int,
+password VARCHAR(500),
+gender VARCHAR(500),
+country VARCHAR(500)
+);
+
  */
 package controller;
 import java.sql.*;
@@ -40,15 +49,15 @@ public class Database {
     public int insertUser(User newUser) {
         int status = 0;
         try {
-			String sql = "INSERT INTO tblUsers VALUES(?,?,?,?,?,?,?)";
-            preparedStatement = connection.preparedStatement(sql);
-            preparedStatement.setString(1, getFirstName());
-            preparedStatement.setString(2, getLastName());
-            preparedStatement.setString(3, getEmail());
-            preparedStatement.setInteger(4, getAge());
-            preparedStatement.setString(5, getPassword());
-            preparedStatement.setString(6, getGender());
-            preparedStatement.setString(7, getCountry());
+            String sql = "INSERT INTO tblUsers VALUES(?,?,?,?,?,?,?)";            
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, newUser.getFirstName());
+            preparedStatement.setString(2, newUser.getLastName());
+            preparedStatement.setString(3, newUser.getEmail());
+            preparedStatement.setInt(4,newUser.getAge());
+            preparedStatement.setString(5, newUser.getPassword());
+            preparedStatement.setString(6, newUser.getGender());
+            preparedStatement.setString(7, newUser.getCountry());
             preparedStatement.executeUpdate();
         } catch(Exception e) {
             return status;
