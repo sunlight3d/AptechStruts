@@ -60,7 +60,25 @@ public class Database {
             preparedStatement.setString(7, newUser.getCountry());
             preparedStatement.executeUpdate();
         } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
             return status;
+        }
+    }
+    public Boolean login(String email, String password) {
+        Boolean result = false;
+        try {
+            String sql = "SELECT * FROM tblUsers WHERE email=? and password=?";            
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            result = resultSet.next();
+        } catch(Exception e) {
+            e.printStackTrace();
+            result = false;
+        } finally {
+            return result;
         }
     }
 }
